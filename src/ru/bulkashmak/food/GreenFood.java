@@ -12,9 +12,8 @@ public abstract class GreenFood {
 
     @Override
     public String toString() {
-        return "GreenFood{" +
+        return "GreenFood: " +
                 "price=" + price +
-                ", mass=" + mass +
-                '}';
+                ", mass=" + mass;
     }
 }
