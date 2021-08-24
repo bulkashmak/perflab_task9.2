@@ -19,8 +19,7 @@ public class GreenFoodBase {
         generateGreenFoods().stream().map((g)->{
             Random random = new Random();
             Store randomStore = StoreDatabase.allStores.get(random.nextInt(StoreDatabase.allStores.size()));
-            Box box = new Box(randomStore.id, randomStore.brand, g);
-            return box;
+            return new Box(randomStore.id, randomStore.brand, g);
         });
     }
 
@@ -44,11 +43,10 @@ public class GreenFoodBase {
                     greenFood = new Banana(price, mass);
                     break;
                 case 2:
-                    greenFood = new Cucumber(price, mass);
+                    greenFood = new Cabbage(price, mass);
                     break;
-                case 3:
                 default:
-                    greenFood = new Tomato(price, mass);
+                    greenFood = new Potato(price, mass);
                     break;
             }
             generatedFood.add(greenFood);

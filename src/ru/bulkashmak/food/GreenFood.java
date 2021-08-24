@@ -16,4 +16,8 @@ public abstract class GreenFood {
                 "price=" + price +
                 ", mass=" + mass;
     }
+
+    public double getPrice() {
+        return price;
+    }
 }
