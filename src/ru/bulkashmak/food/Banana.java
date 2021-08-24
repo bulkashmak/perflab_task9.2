@@ -1,8 +1,8 @@
 package ru.bulkashmak.food;
 
-public class Banana extends Fruit {
+public class Banana extends Fruit{
 
-    public Banana(double price, double mass, int grade) {
-        super(price, mass, grade);
+    public Banana(double price, double mass) {
+        super(price, mass);
     }
 }
