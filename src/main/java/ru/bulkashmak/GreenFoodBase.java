@@ -1,6 +1,7 @@
 package ru.bulkashmak;
 
 
+import ru.bulkashmak.food.Banana;
 import ru.bulkashmak.food.*;
 import ru.bulkashmak.stores.Store;
 import ru.bulkashmak.stores.StoreDatabase;

@@ -20,4 +20,8 @@ public abstract class GreenFood {
     public double getPrice() {
         return price;
     }
+
+    public double getMass() {
+        return mass;
+    }
 }

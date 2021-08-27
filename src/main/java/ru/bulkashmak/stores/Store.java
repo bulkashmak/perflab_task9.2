@@ -2,6 +2,7 @@ package ru.bulkashmak.stores;
 
 
 import ru.bulkashmak.Box;
+import ru.bulkashmak.food.Fruit;
 import ru.bulkashmak.food.GreenFood;
 
 import java.util.ArrayList;
@@ -34,16 +35,27 @@ public class Store {
                 .collect(Collectors.toList());
     }
 
-    public void sortByMassDesc() {
+    public List<Box<GreenFood>> sortByMassDesc() {
 
+        return localStorage.stream()
+                .sorted( (o1, o2) -> (int) Math.round(o2.getFood().getMass() - o1.getFood().getMass()) )
+                .collect(Collectors.toList());
     }
 
-    public void calcTotalPrice() {
+    public int calcTotalPrice() {
 
+        return localStorage.stream()
+                .mapToInt( p -> (int) (p.getFood().getPrice()))
+                .sum();
     }
 
-    public void calcAllFruitsUnder50() {
+    public int calcAllFruitsUnder50() {
 
+        return localStorage.stream()
+                .filter( p -> p.getFood().getClass().equals(Fruit.class))
+                .filter( p -> p.getFood().getPrice() < 50 )
+                .mapToInt( p -> (int) (p.getFood().getPrice()))
+                .sum();
     }
 
     @Override
